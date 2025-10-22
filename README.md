@@ -9,6 +9,10 @@ Bu projenin amacı, nitelikli kahve demleme yöntemleri hakkında bilgi veren "K
 ## 2. Veri Seti Hakkında Bilgi 
 
 Projenin bilgi tabanı (knowledge base), nitelikli kahve demleme üzerine yazılmış popüler ve güvenilir bloglardan toplanan metinlerden oluşmaktadır.
+- https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset/data
+- https://www.coffeebeanbox.com/kahveler-hakkinda
+- https://thewhirl.com.tr/blog/
+
 
 * **Toplama Metodolojisi:** V60, Chemex, Aeropress, su sıcaklığı, öğütme dereceleri ve kahve tarihi gibi spesifik konuları kapsayan 12 adet detaylı rehber metni derlenmiştir.
 * **Hazırlanışı:** Her bir rehber, `.txt` formatında ayrı bir dosya olarak `data/` klasörü altında yapılandırılmıştır. Uygulama, bu dosyalardaki metinleri işleyerek kendi vektör veritabanını oluşturur.
@@ -33,7 +37,7 @@ Projenin yerel bilgisayarınızda çalıştırılması için aşağıdaki adıml
 
 1.  **Depoyu Klonlayın:**
     ```bash
-    git clone [https://github.com/gizemnuryilmaz/akbank-genai-chatbot](https://github.com/gizemnuryilmaz/akbank-genai-chatbot)
+    git clone https://github.com/gizemnuryilmaz/akbank-genai-chatbot
     cd akbank-genai-chatbot
     ```
 
@@ -52,14 +56,22 @@ Projenin yerel bilgisayarınızda çalıştırılması için aşağıdaki adıml
     * Projenin ana dizininde `.env` adında bir dosya oluşturun.
     * İçine Google Gemini API anahtarınızı aşağıdaki gibi ekleyin:
         ```
-        GEMINI_API_KEY=BURAYA_API_ANAHTARINIZI_YAPIŞTIRIN
+        GEMINI_API_KEY="BURAYA_API_ANAHTARINIZI_YAPIŞTIRIN"
         ```
-
-5.  **Uygulamayı Başlatın:**
+5. **LM Studio:**
+    Embedding model: Lokal olarak LM Studio kullanılarak deploy edilmiştir.
+    ```
+    text-embedding-nomic-embed-text-v1.5
+    ```
+6.  **Uygulamayı Başlatın:**
     ```bash
     streamlit run app.py
     ```
 
-## 6. Web Arayüzü Linki [cite: 13]
-
-(Bu link, proje sonunda Streamlit Cloud, Hugging Face Spaces veya benzeri bir platforma deploy edildiğinde eklenecektir.)
+## 6. Web Arayüzü 
+##### Karşılama Mesajı
+![karşılama mesajı](./images/1.png)
+##### Kahve Önerisi
+![kahve önerisi](./images/2.png)
+##### RAG dışı mesaj
+![RAG dışı mesaj](./images/3.png)

@@ -1,0 +1,10 @@
+langchain_google_genai 
+streamlit 
+google-generativeai 
+google-genai 
+scikit-learn 
+numpy 
+python-dotenv 
+pandas 
+chromadb
+langchain[google-genai]
